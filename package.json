@@ -1,0 +1,27 @@
+{
+  "name": "AngularJsBestPracticesSpeech",
+  "version": "0.0.1",
+  "description": "Demo project for AngularJS best practices speech",
+  "main": "index.html",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Ne4istb/AngularJsBestPracticesSpeech.git"
+  },
+  "keywords": [
+    "angular",
+    "js",
+    "best",
+    "practices"
+  ],
+  "author": "Ne4istb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ne4istb/AngularJsBestPracticesSpeech/issues"
+  },
+  "homepage": "https://github.com/Ne4istb/AngularJsBestPracticesSpeech",
+  "dependencies": {
+    "angular": "^1.3.15",
+    "angular-route": "^1.3.15"
+  }
+}
