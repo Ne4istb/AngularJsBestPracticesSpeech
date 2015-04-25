@@ -1,5 +1,10 @@
 <div class="">
     <h2 class="header">TODO LIST</h2>
+
+    <form class="todo-item" blur-on-submit ng-submit="vm.addTask()">
+        <input class="new-task" placeholder="Add new task" ng-model="vm.newTask" />
+    </form>
+
     <div ng-repeat="task in vm.todos">
         <div class="todo-item" ng-class="{strikeout: task.done}">
             <input type="checkbox" ng-model="task.done"/>

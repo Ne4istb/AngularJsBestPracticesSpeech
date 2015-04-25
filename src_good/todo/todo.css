@@ -5,11 +5,13 @@
 
 .todo-item {
     border: 1px dotted lightgray;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+    line-height: 45px;
 }
 
 .todo-item:hover {
@@ -25,6 +27,23 @@
 
 .todo-task {
     font-family: cursive;
+}
+
+.new-task {
+    border: 0;
+    line-height: 45px;
+    height: 45px;
+    width: 90%;
+    font-family: cursive;
+    margin-left: -10px;
+    padding-left: 35px;
+}
+
+.new-task:focus{
+    outline: none;
+    border:1px solid #b2ee89;
+    box-shadow: 0 0 10px #51ce7d;
+
 }
 
 .strikeout {

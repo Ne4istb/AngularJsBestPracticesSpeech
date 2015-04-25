@@ -6,7 +6,15 @@ angular.module('todo', [])
 todoListController.$inject = ['todos'];
 
 function todoListController(todos) {
+
 	var vm = this;
 	vm.todos = todos;
+
+	vm.addTask = addTask;
+
+	function addTask(){
+
+	}
+
 }
 
