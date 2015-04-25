@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('main', [])
-.controller('MainCtrl', function ($scope, $http) {
+angular.module('todo', [])
+.controller('TodoListCtrl', function ($scope, $http) {
 
 	$scope.todos = [];
 

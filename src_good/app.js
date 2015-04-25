@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('BestPractices', ['ngRoute', 'main'])
+angular.module('BestPractices', ['ngRoute', 'todo'])
 
 .config(['$routeProvider', function ($routeProvider) {
-	$routeProvider.when('/main-view', {
-		templateUrl: 'main/main-view.html',
-		controller: 'MainCtrl',
+	$routeProvider.when('/todo-list', {
+		templateUrl: 'todo/todo-list.html',
+		controller: 'TodoListCtrl',
 		controllerAs: 'vm',
 		resolve: {
 			todos: function(todoService) {
@@ -13,5 +13,5 @@ angular.module('BestPractices', ['ngRoute', 'main'])
 			}
 		}
 	});
-	$routeProvider.otherwise({redirectTo: '/main-view'});
+	$routeProvider.otherwise({redirectTo: '/todo-list'});
 }]);
