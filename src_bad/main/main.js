@@ -2,8 +2,8 @@
 
 angular.module('main', [])
 
-.controller('MinCtrl', function(){
-   alert('Test');
+.controller('MainCtrl', function () {
+	alert('Test');
 });
 
 
