@@ -51,17 +51,16 @@ TodoRepository = function () {
 	this.add = function (item) {
 
 		item.id = uuid.v4();
-		todos.push(item);
+		todos.unshift(item);
 
 		return item;
 	};
 };
 
-function NotFoundError(message) {
+NotFoundError = function (message) {
 	this.name = "NotFoundError";
 	this.message = (message || "");
-}
-
+};
 NotFoundError.prototype = Error.prototype;
 
 var repository = new TodoRepository();

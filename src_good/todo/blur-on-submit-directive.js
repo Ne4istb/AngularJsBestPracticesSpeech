@@ -1,16 +1,16 @@
 'use strict';
 
 angular.module('todo')
-.directive('blurOnSubmit', blurOnSubmit);
+	.directive('blurOnSubmit', blurOnSubmit);
 
-function blurOnSubmit() {
+	function blurOnSubmit() {
 
-	return function (scope, element) {
+		return function (scope, element) {
 
-		var textFields = element.find('input');
+			var textFields = element.find('input');
 
-		element.bind('submit', function() {
-			textFields[0].blur();
-		});
-	};
-}
+			element.bind('submit', function() {
+				textFields[0].blur();
+			});
+		};
+	}
