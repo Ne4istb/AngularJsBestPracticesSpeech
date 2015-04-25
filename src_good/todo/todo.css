@@ -1,0 +1,41 @@
+.header {
+    text-align: center;
+    font-family: cursive;
+}
+
+.todo-item {
+    border: 1px dotted lightgray;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.todo-item:hover {
+    background: #b2ee89;
+}
+
+.todo-type {
+    float: right;
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.todo-task {
+    font-family: cursive;
+}
+
+.strikeout {
+    position: relative;
+}
+
+.strikeout::after {
+    border-bottom: 2px solid #646E63;
+    content: "";
+    left: 30px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
