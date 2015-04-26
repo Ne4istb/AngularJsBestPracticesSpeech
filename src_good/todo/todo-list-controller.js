@@ -8,7 +8,9 @@ angular.module('todo', [])
 	function todoListController(todos, todoService) {
 
 		var vm = this;
+
 		vm.todos = todos;
+		vm.unfinishedTasksCount = getUnfinishedTasksCount();
 
 		vm.addTask = addTask;
 
@@ -21,8 +23,17 @@ angular.module('todo', [])
 				.then(function onTodoItemCreated(item) {
 					vm.todos.unshift(item);
 					vm.newTask = undefined;
+					vm.unfinishedTasksCount = getUnfinishedTasksCount();
 				});
 		}
 
+		function getUnfinishedTasksCount (){
+
+			var unfinished = vm.todos.filter(function (task) {
+				return !task.done;
+			});
+
+			return unfinished.length;
+		}
 	}
 

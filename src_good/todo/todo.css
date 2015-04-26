@@ -1,20 +1,33 @@
+body{
+    box-sizing: border-box;
+}
+
 .header {
     text-align: center;
     font-family: cursive;
 }
 
-.todo-item {
-    border: 1px dotted lightgray;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 5px;
+.container{
     margin-left: auto;
     margin-right: auto;
     width: 70%;
-    line-height: 45px;
 }
 
-.todo-item:hover {
+.todo-item {
+
+    border: 1px dotted lightgray;
+    margin-bottom: 5px;
+
+    line-height: 45px;
+
+}
+
+.list{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.list:hover {
     background: #b2ee89;
 }
 
@@ -29,21 +42,30 @@
     font-family: cursive;
 }
 
-.new-task {
+.new-input {
     border: 0;
     line-height: 45px;
     height: 45px;
-    width: 90%;
-    font-family: cursive;
-    margin-left: -10px;
-    padding-left: 35px;
 }
 
-.new-task:focus{
+.new-input:focus{
     outline: none;
     border:1px solid #b2ee89;
     box-shadow: 0 0 10px #51ce7d;
+}
 
+.new-task {
+    width: 100%;
+    font-family: cursive;
+    padding-left: 35px;
+    box-sizing: border-box;
+}
+
+.task-count {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .strikeout {
