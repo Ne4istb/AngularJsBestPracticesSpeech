@@ -1,39 +1,70 @@
 'use strict';
 
 angular.module('todo', [])
-	.controller('TodoListCtrl', todoListController);
+    .controller('TodoListCtrl', todoListController);
 
-	todoListController.$inject = ['todos', 'todoService'];
+todoListController.$inject = ['$q', 'todos', 'todoService'];
 
-	function todoListController(todos, todoService) {
+function todoListController($q, todos, todoService) {
 
-		var vm = this;
+    var vm = this;
 
-		vm.todos = todos;
-		vm.unfinishedTasksCount = getUnfinishedTasksCount();
+    vm.todos = todos;
+    vm.unfinishedTasksCount = getUnfinishedTasksCount();
 
-		vm.addTask = addTask;
+    vm.addTask = addTask;
 
-		function addTask() {
 
-			var newTodoItem = {task: vm.newTask, type: "urgent", done: false};
+    function addTask() {
+        validateItem(vm.newTask)
+            .then(prepareData)
+            .then(createItem)
+            .then(onItemCreated)
+            .catch(onCreateItemError);
+    }
 
-			todoService
-				.create(newTodoItem)
-				.then(function onTodoItemCreated(item) {
-					vm.todos.unshift(item);
-					vm.newTask = undefined;
-					vm.unfinishedTasksCount = getUnfinishedTasksCount();
-				});
-		}
+    function validateItem(task) {
 
-		function getUnfinishedTasksCount (){
+        if (!task)
+            return $q.reject('New task is empty');
 
-			var unfinished = vm.todos.filter(function (task) {
-				return !task.done;
-			});
+        // Some extra validation
 
-			return unfinished.length;
-		}
-	}
+        return $q.when(task)
+    }
+
+    function prepareData(task) {
+
+        var newTodoItem = {task: task, type: "urgent", done: false};
+
+        // Some more preparation
+
+        return $q.when(newTodoItem);
+    }
+
+    function createItem(itemData) {
+        return todoService.create(itemData);
+    }
+
+    function onItemCreated(item) {
+
+        vm.todos.unshift(item);
+
+        vm.newTask = undefined;
+        vm.unfinishedTasksCount = getUnfinishedTasksCount();
+    }
+
+    function onCreateItemError(error) {
+        console.log(error);
+    }
+
+    function getUnfinishedTasksCount() {
+
+        var unfinished = vm.todos.filter(function (task) {
+            return !task.done;
+        });
+
+        return unfinished.length;
+    }
+}
 
