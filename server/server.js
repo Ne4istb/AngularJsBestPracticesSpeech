@@ -1,10 +1,16 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var todoRepository = require('./todo-repository');
+var users = require('./user-repository');
 var notFoundError = require('./not-found-error');
 
 var app = express();
 app.use(bodyParser.json({type: 'application/json'}));
+
+app.get('/user', function (request, response) {
+	var result = users.getCurrentUser();
+	response.send(result);
+});
 
 app.get('/todos/:id', function (request, response, next) {
 	try {
