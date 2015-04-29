@@ -3,12 +3,16 @@
 angular.module('todo', [])
     .controller('TodoListCtrl', function ($scope, $http, $document) {
 
-        var baseUrl = "http://localhost:8080/todos/";
+        var baseUrl = "http://localhost:8080";
 
         $scope.todos = [];
 
-        $http.get(baseUrl).then(function (response) {
+        $http.get(baseUrl + '/todos').then(function (response) {
             $scope.todos = response.data;
+        });
+
+        $http.get(baseUrl + '/user').then(function (response) {
+            $scope.userName = response.data.name;
         });
 
         $scope.addTask = function () {

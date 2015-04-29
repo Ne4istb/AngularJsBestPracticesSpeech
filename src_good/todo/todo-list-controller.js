@@ -3,15 +3,15 @@
 angular.module('todo', [])
     .controller('TodoListCtrl', todoListController);
 
-todoListController.$inject = ['$q', 'todos', 'todoService'];
+todoListController.$inject = ['$q', '$filter', 'todos', 'todoService', 'currentUser'];
 
-function todoListController($q, todos, todoService) {
+function todoListController($q, $filter, todos, todoService, currentUser) {
 
     var vm = this;
 
     vm.todos = todos;
     vm.unfinishedTasksCount = getUnfinishedTasksCount();
-
+    vm.userName = $filter('uppercase')(currentUser.name);
     vm.addTask = addTask;
 
 

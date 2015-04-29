@@ -10,6 +10,9 @@ angular.module('BestPractices', ['ngRoute', 'todo'])
 		resolve: {
 			todos: function(todoService) {
 				return todoService.list();
+			},
+			currentUser:function(userService) {
+				return userService.getCurrentUser();
 			}
 		}
 	});
