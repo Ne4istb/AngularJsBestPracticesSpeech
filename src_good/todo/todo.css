@@ -75,6 +75,16 @@ body{
     margin-top: 10px;
     text-align: center;
 }
+
+.search {
+    float: right;
+}
+
+.search-input {
+    border: 1px dotted lightgray;
+    padding: 5px;
+}
+
 .strikeout {
     position: relative;
 }

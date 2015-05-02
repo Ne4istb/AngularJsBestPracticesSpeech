@@ -10,8 +10,15 @@ TodoRepository = function () {
 		{id: "dc8bbdb9-dbdf-4f37-b01c-39f330ae8d80", task: "Bear with friends", type: "high", done: false}
 	];
 
-	this.list = function () {
-		return todos;
+	this.list = function (query) {
+
+		if (!query)
+			return todos;
+
+		return todos.filter(function (item) {
+			var task = item.task.toLowerCase();
+			return task.indexOf(query.toLowerCase()) >= 0;
+		});
 	};
 
 	function getItemIndex(id) {

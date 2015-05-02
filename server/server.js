@@ -49,7 +49,8 @@ app.post('/todos', function (request, response) {
 });
 
 app.get('/todos', function (request, response) {
-	var todoList = todoRepository.list();
+	var query = request.query.query;
+	var todoList = todoRepository.list(query);
 	response.send(todoList);
 });
 

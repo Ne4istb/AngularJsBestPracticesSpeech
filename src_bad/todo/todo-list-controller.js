@@ -5,6 +5,10 @@ angular.module('todo', [])
 
 	var baseUrl = "http://localhost:8080";
 
+	$scope.$watch('todos', function(){
+		$scope.todos = reorderTodoList($scope.todos);
+	},true);
+
 	$scope.todos = [];
 
 	$http.get(baseUrl + '/todos').then(function (response) {
@@ -93,8 +97,15 @@ angular.module('todo', [])
 		return unfinished.length;
 	};
 
-	$scope.$watch('todos', function(){
-		$scope.todos = reorderTodoList($scope.todos);
-	},true)
+	$scope.searchTodos = function () {
+
+		var config = {
+			params: {query: $scope.searchPattern}
+		};
+
+		$http.get(baseUrl + '/todos', config).then(function (response) {
+			$scope.todos = reorderTodoList(response.data);
+		});
+	};
 });
 

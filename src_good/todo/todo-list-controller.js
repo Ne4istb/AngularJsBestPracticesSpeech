@@ -1,70 +1,76 @@
 'use strict';
 
 angular.module('todo', [])
-    .controller('TodoListCtrl', todoListController);
+.controller('TodoListCtrl', todoListController);
 
 todoListController.$inject = ['$q', '$filter', 'todos', 'todoService', 'currentUser'];
 
 function todoListController($q, $filter, todos, todoService, currentUser) {
 
-    var vm = this;
+	var vm = this;
 
-    vm.todos = todos;
-    vm.unfinishedTasksCount = getUnfinishedTasksCount();
-    vm.userName = $filter('uppercase')(currentUser.name);
-    vm.addTask = addTask;
+	vm.todos = todos;
+	vm.unfinishedTasksCount = getUnfinishedTasksCount();
+	vm.userName = $filter('uppercase')(currentUser.name);
+	vm.addTask = addTask;
+	vm.searchTodos = searchTodos;
 
+	function addTask() {
+		validateItem(vm.newTask)
+		.then(prepareData)
+		.then(createItem)
+		.then(onItemCreated)
+		.catch(onCreateItemError);
+	}
 
-    function addTask() {
-        validateItem(vm.newTask)
-            .then(prepareData)
-            .then(createItem)
-            .then(onItemCreated)
-            .catch(onCreateItemError);
-    }
+	function validateItem(task) {
 
-    function validateItem(task) {
+		if (!task)
+			return $q.reject('New task is empty');
 
-        if (!task)
-            return $q.reject('New task is empty');
+		// Some extra validation
 
-        // Some extra validation
+		return $q.when(task)
+	}
 
-        return $q.when(task)
-    }
+	function prepareData(task) {
 
-    function prepareData(task) {
+		var newTodoItem = {task: task, type: "urgent", done: false};
 
-        var newTodoItem = {task: task, type: "urgent", done: false};
+		// Some more preparation
 
-        // Some more preparation
+		return $q.when(newTodoItem);
+	}
 
-        return $q.when(newTodoItem);
-    }
+	function createItem(itemData) {
+		return todoService.create(itemData);
+	}
 
-    function createItem(itemData) {
-        return todoService.create(itemData);
-    }
+	function onItemCreated(item) {
 
-    function onItemCreated(item) {
+		vm.todos.unshift(item);
 
-        vm.todos.unshift(item);
+		vm.newTask = undefined;
+		vm.unfinishedTasksCount = getUnfinishedTasksCount();
+	}
 
-        vm.newTask = undefined;
-        vm.unfinishedTasksCount = getUnfinishedTasksCount();
-    }
+	function onCreateItemError(error) {
+		console.log(error);
+	}
 
-    function onCreateItemError(error) {
-        console.log(error);
-    }
+	function getUnfinishedTasksCount() {
 
-    function getUnfinishedTasksCount() {
+		var unfinished = vm.todos.filter(function (task) {
+			return !task.done;
+		});
 
-        var unfinished = vm.todos.filter(function (task) {
-            return !task.done;
-        });
+		return unfinished.length;
+	}
 
-        return unfinished.length;
-    }
+	function searchTodos(){
+		todoService.list(vm.searchPattern).then(function(todos){
+			vm.todos = todos;
+		});
+	}
 }
 

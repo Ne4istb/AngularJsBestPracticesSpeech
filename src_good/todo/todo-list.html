@@ -2,7 +2,18 @@
     <h2 class="header">TODO LIST BY {{::vm.userName}}</h2>
 
     <div class="container">
-        <div class="task-count label">Number of unfinished tasks: {{vm.unfinishedTasksCount}}</div>
+        <div>
+            <div class="search">
+                <input type="text"
+                       class="search-input"
+                       ng-model="vm.searchPattern"
+                       ng-change="vm.searchTodos()"
+                       ng-model-options="{ debounce: 300 }"
+                       placeholder="search"/>
+            </div>
+            <div class="task-count label">Number of unfinished tasks: {{vm.unfinishedTasksCount}}</div>
+
+        </div>
 
         <form class="todo-item" blur-on-submit ng-submit="vm.addTask()">
             <input id="new-task" class="new-input new-task" placeholder="Add new task" ng-model="vm.newTask"/>

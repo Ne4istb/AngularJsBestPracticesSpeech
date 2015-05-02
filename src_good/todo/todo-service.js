@@ -7,8 +7,14 @@ angular.module('todo')
 
 		var baseUrl = "http://localhost:8080/todos/";
 
-		var list = function () {
-			return $http.get(baseUrl).then(function (response) {
+		var list = function (query) {
+
+			var config={};
+
+			if (query)
+				config.params = { query: query };
+
+			return $http.get(baseUrl, config).then(function (response) {
 				return response.data;
 			});
 		};
