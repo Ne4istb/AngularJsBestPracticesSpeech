@@ -1,0 +1,6 @@
+<div class="todo-item list" ng-class="{strikeout: task.done}">
+    <input type="checkbox" ng-model="task.done"/>
+    <span class="todo-task" ng-hide="editMode" ng-click="changeMode()">{{task.task}}</span>
+    <input type="text" ng-show="editMode" ng-change="changeMode()" ng-model="task.task"/>
+    <span class="todo-type">{{task.type}}</span>
+</div>

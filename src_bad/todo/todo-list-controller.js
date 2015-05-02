@@ -1,81 +1,100 @@
 'use strict';
 
 angular.module('todo', [])
-    .controller('TodoListCtrl', function ($scope, $http, $document) {
+.controller('TodoListCtrl', function ($scope, $http, $document) {
 
-        var baseUrl = "http://localhost:8080";
+	var baseUrl = "http://localhost:8080";
 
-        $scope.todos = [];
+	$scope.todos = [];
 
-        $http.get(baseUrl + '/todos').then(function (response) {
-            $scope.todos = response.data;
-        });
+	$http.get(baseUrl + '/todos').then(function (response) {
+		$scope.todos = reorderTodoList(response.data);
+	});
 
-        $http.get(baseUrl + '/user').then(function (response) {
-            $scope.userName = response.data.name;
-        });
+	var reorderTodoList = function(list){
+		var result = [];
+		list.forEach(function(item){
+			if(!item.done)
+				result.push(item);
+		});
 
-        $scope.addTask = function () {
-            blurNewTaskInput();
-            createNewTodoItem();
-        };
+		list.forEach(function(item){
+			if(item.done)
+				result.push(item);
+		});
 
-        var blurNewTaskInput = function () {
-            var textFields = $document.find('input');
-            textFields[0].blur();
-        };
+		return result;
+	};
 
-        var createNewTodoItem = function () {
+	$http.get(baseUrl + '/user').then(function (response) {
+		$scope.userName = response.data.name;
+	});
 
-            validateItem($scope.newTask, function (task) {
-                prepareData(task, function (itemData) {
-                    return createItem(itemData).then(onItemCreated);
-                });
-            }, onCreateItemError);
+	$scope.addTask = function () {
+		blurNewTaskInput();
+		createNewTodoItem();
+	};
 
-        };
+	var blurNewTaskInput = function () {
+		var textFields = $document.find('input');
+		textFields[0].blur();
+	};
 
-        var validateItem = function (task, success, error) {
+	var createNewTodoItem = function () {
 
-            if (!task) {
-                error('New task is empty');
-                return;
-            }
+		validateItem($scope.newTask, function (task) {
+			prepareData(task, function (itemData) {
+				return createItem(itemData).then(onItemCreated);
+			});
+		}, onCreateItemError);
 
-            // Some extra validation
+	};
 
-            success(task);
-        };
+	var validateItem = function (task, success, error) {
 
-        var prepareData = function (task, callback) {
+		if (!task) {
+			error('New task is empty');
+			return;
+		}
 
-            var newTodoItem = {task: task, type: "urgent", done: false};
+		// Some extra validation
 
-            // Some more preparation
+		success(task);
+	};
 
-            callback(newTodoItem);
-        };
+	var prepareData = function (task, callback) {
 
-        var createItem = function (itemData) {
-            return $http.post(baseUrl, itemData);
-        };
+		var newTodoItem = {task: task, type: "urgent", done: false};
 
-        var onItemCreated = function (response) {
-            $scope.todos.unshift(response.data);
-            $scope.newTask = undefined;
-        };
+		// Some more preparation
 
-        var onCreateItemError = function (error) {
-            console.log(error);
-        };
+		callback(newTodoItem);
+	};
 
-        $scope.getUnfinishedTasksCount = function () {
+	var createItem = function (itemData) {
+		return $http.post(baseUrl + '/todos', itemData);
+	};
 
-            var unfinished = $scope.todos.filter(function (task) {
-                return !task.done;
-            });
+	var onItemCreated = function (response) {
+		$scope.todos.unshift(response.data);
+		$scope.newTask = undefined;
+	};
 
-            return unfinished.length;
-        }
-    });
+	var onCreateItemError = function (error) {
+		console.log(error);
+	};
+
+	$scope.getUnfinishedTasksCount = function () {
+
+		var unfinished = $scope.todos.filter(function (task) {
+			return !task.done;
+		});
+
+		return unfinished.length;
+	};
+
+	$scope.$watch('todos', function(){
+		$scope.todos = reorderTodoList($scope.todos);
+	},true)
+});
 

@@ -2,17 +2,19 @@
     <h2 class="header">TODO LIST BY {{::vm.userName}}</h2>
 
     <div class="container">
-        <div class="task-count">Number of unfinished tasks: {{vm.unfinishedTasksCount}}</div>
+        <div class="task-count label">Number of unfinished tasks: {{vm.unfinishedTasksCount}}</div>
 
         <form class="todo-item" blur-on-submit ng-submit="vm.addTask()">
             <input id="new-task" class="new-input new-task" placeholder="Add new task" ng-model="vm.newTask"/>
         </form>
 
-        <div ng-repeat="task in vm.todos">
-            <div class="todo-item list" ng-class="{strikeout: task.done}">
-                <input type="checkbox" ng-model="task.done"/>
-                <span class="todo-task">{{task.task}}</span>
-                <span class="todo-type">{{task.type}}</span>
+        <div>
+            <div ng-if="vm.todos.length > 0" ng-repeat="task in vm.todos | orderBy: 'done'">
+                <todo-item task="task"></todo-item>
+            </div>
+
+            <div class="label no-tasks" ng-if="vm.todos.length == 0">
+                You have no tasks yet
             </div>
         </div>
     </div>
