@@ -15,9 +15,11 @@ TodoRepository = function () {
 		if (!query)
 			return todos;
 
+		var searchString = query.toLowerCase();
+
 		return todos.filter(function (item) {
 			var task = item.task.toLowerCase();
-			return task.indexOf(query.toLowerCase()) >= 0;
+			return task.indexOf(searchString) >= 0;
 		});
 	};
 

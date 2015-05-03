@@ -3,9 +3,9 @@
 angular.module('todo', [])
 .controller('TodoListCtrl', todoListController);
 
-todoListController.$inject = ['$q', '$filter', 'todos', 'todoService', 'currentUser'];
+todoListController.$inject = ['$q', '$filter', '$scope', 'todos', 'todoService', 'currentUser'];
 
-function todoListController($q, $filter, todos, todoService, currentUser) {
+function todoListController($q, $filter, $scope, todos, todoService, currentUser) {
 
 	var vm = this;
 
@@ -72,5 +72,21 @@ function todoListController($q, $filter, todos, todoService, currentUser) {
 			vm.todos = todos;
 		});
 	}
+
+	function onItemRemoved(event, id){
+
+		var index = getItemIndex(id);
+
+		if (index >= 0)
+			vm.todos.splice(index, 1);
+	}
+
+	function getItemIndex(id) {
+		return vm.todos.map(function (e) {
+			return e.id;
+		}).indexOf(id);
+	}
+
+	$scope.$on('todo.itemRemoved', onItemRemoved);
 }
 

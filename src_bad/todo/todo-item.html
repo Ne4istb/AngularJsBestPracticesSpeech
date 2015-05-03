@@ -1,12 +1,10 @@
 <div class="todo-item list" ng-class="{strikeout: task.done}">
 
-    <input type="checkbox" ng-model="task.done" ng-change="updateItem()"/>
+    <input type="checkbox" ng-model="task.done"/>
 
     <input type="text"
            class="todo-item-task todo-task"
-           ng-model="task.task"
-           ng-model-options="{ updateOn: 'blur' }"
-           ng-change="updateItem()"/>
+           ng-model="task.task"/>
 
     <div class="delete-item" ng-click="deleteItem()"></div>
 </div>

@@ -19,11 +19,7 @@
 
         <div>
             <div ng-show="todos.length > 0" ng-repeat="task in todos">
-                <div class="todo-item list" ng-class="{strikeout: task.done}">
-                    <input type="checkbox" ng-model="task.done"/>
-                    <span class="todo-task">{{task.task}}</span>
-                    <span class="todo-type">{{task.type}}</span>
-                </div>
+                <todo-item task="task"></todo-item>
             </div>
 
             <div class="label no-tasks" ng-show="todos.length == 0">

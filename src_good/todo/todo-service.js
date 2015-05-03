@@ -25,8 +25,20 @@ angular.module('todo')
 			});
 		};
 
+		var update = function (id, item) {
+			return $http.put(baseUrl + id, item).then(function (response) {
+				return response.data;
+			});
+		};
+
+		var remove = function(id){
+			return $http.delete(baseUrl + id);
+		};
+
 		return {
 			list: list,
-			create: create
+			create: create,
+			update: update,
+			delete: remove
 		};
 	}
