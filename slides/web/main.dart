@@ -1,0 +1,8 @@
+import 'package:angular/application_factory.dart';
+import 'package:dacsslide/presentation.dart';
+import 'package:pretty_samples/pretty_samples.dart';
+
+main() => applicationFactory()
+.addModule(new PresentationModule())
+.addModule(new SamplesModule())
+.run();

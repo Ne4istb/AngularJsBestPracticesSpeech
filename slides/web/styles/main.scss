@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+html, body {
+  background: url("../assets/wood_bg.jpg");
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  width: 100%;
+  padding:0;
+  margin:0;
+  perspective: 900px;
+  overflow: hidden;
+}
+.hidden { opacity:0; }
+controls {
+  font-size: 12px;opacity:0.3;
+}
+controls:hover{ opacity:1;}
+symbol {
+  font-size: 120px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  opacity:0;
+}
+comment {
+  background-color: #222;
+}
+
+#title{
+  font-size: 100px;
+}
+
+#title: move(0,-200);
+
+#titleExtra{
+  font-size: 80px;
+}
+
+#titleExtra: move(0,-100);
+
+#name {
+  font-size: 52px;
+}
+
+#name: move(-50,70);
+
+#mytitle {
+  color: #888;font-size: 32px;
+}
+#mytitle: move(-45,120);
+
+#logo{
+  img {
+    width: 300px;
+  }
+}
+#logo: move(350,100);
+
+.s1 {
+  #logo: show;
+  #name:show;
+  #mytitle: show;
+  #title: show;
+  #titleExtra: show;
+}
