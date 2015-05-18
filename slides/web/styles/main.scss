@@ -1,8 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
 
 html, body {
   background: url("../assets/wood_bg.jpg");
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Bree Serif', sans-serif;
   height: 100%;
   width: 100%;
   padding:0;
@@ -25,11 +25,24 @@ comment {
   background-color: #222;
 }
 
+.text {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  color: #000000;
+}
+
 #title{
   font-size: 100px;
 }
 
-#title: move(0,-200);
+#title: move(50,-200);
+
+#angular{
+  img {
+    width: 100px;
+  }
+}
+#angular: move(-400,-190);
+
 
 #titleExtra{
   font-size: 80px;
@@ -44,7 +57,7 @@ comment {
 #name: move(-50,70);
 
 #mytitle {
-  color: #888;font-size: 32px;
+  font-size: 32px;
 }
 #mytitle: move(-45,120);
 
@@ -53,12 +66,165 @@ comment {
     width: 300px;
   }
 }
-#logo: move(350,100);
+
+#logo: move(350,110);
 
 .s1 {
+  #angular: show;
   #logo: show;
   #name:show;
   #mytitle: show;
   #title: show;
   #titleExtra: show;
+}
+
+.img-background{
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#learningCurve{
+  img {
+    width: 1000px;
+  }
+}
+
+#accounting{
+  img {
+    width: 800px;
+  }
+}
+
+#accounting: down(100);
+
+#learningCurveText {
+  font-size: 52px;
+}
+
+#learningCurveText: up(300);
+
+.s2 {
+  #angular: hide;
+  #logo: hide;
+  #name:hide;
+  #mytitle: hide;
+  #title: hide;
+  #titleExtra: hide;
+
+  #learningCurve: show;
+  #learningCurveText: show;
+}
+
+.s3{
+  #learningCurve: hide;
+  #learningCurveText: hide;
+
+  #twinfield: show;
+}
+
+.s4{
+  #twinfield{
+    transform: scale(0.5, 0.5) translateX(-500px) translateY(-500px);
+  }
+
+  #accounting: show;
+  #angular: move(400,-200);
+
+}
+
+#rake {
+  img {
+    width: 1000px;
+  }
+}
+
+#angularVersion{
+  font-size: 30px;
+}
+
+#angularVersion: move(400,-140);
+
+#rakeText{
+  font-size: 52px;
+}
+
+#rakeText: down(300);
+
+.s5{
+  #twinfield: hide;
+  #accounting: hide;
+
+  #angularVersion: show;
+  #angular: show;
+  #rake: show;
+  #rakeText: show;
+}
+
+#rakedance{
+  img {
+    width: 1000px;
+  }
+}
+
+#rakeDanceText{
+  font-size: 52px;
+}
+
+#rakeDanceText: down(300);
+
+ .s6 {
+
+    #angularVersion: hide;
+    #rake: hide;
+    #rakeText: hide;
+
+
+   #rake {
+     transform: rotateY(180deg);
+    }
+
+    #rakedance: show;
+    #rakeDanceText: show;
+
+    #angular {
+     z-index: 1;
+    }
+ }
+
+#childrenText{
+  font-size: 46px;
+}
+
+#childrenText: down(300);
+
+.s7 {
+  #angular: hide;
+  #rakedance: hide;
+  #rakeDanceText: hide;
+
+  #children: show;
+  #childrenText: show;
+}
+
+
+#adults{
+  img {
+    height: 487px;
+  }
+}
+
+#adultsText{
+  font-size: 46px;
+}
+
+#adultsText: down(300);
+
+
+.s8 {
+  #children: left(350);
+  #adults: right(350);
+
+  #adults: show;
+
+  #childrenText: hide;
+  #adultsText: show;
 }
