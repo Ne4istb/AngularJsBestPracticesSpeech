@@ -20,14 +20,14 @@ symbol {
   transform-style: preserve-3d;
   backface-visibility: hidden;
   opacity:0;
-}
-comment {
-  background-color: #222;
-}
-
-.text {
   text-shadow: 0 0 20px rgba(255, 255, 255, 1);
   color: #000000;
+}
+
+sample { display:none}
+
+comment {
+  background-color: #222;
 }
 
 #title{
@@ -227,4 +227,205 @@ comment {
 
   #childrenText: hide;
   #adultsText: show;
+}
+
+#tipTypes{
+  font-size: 80px;
+}
+
+#performanceText{
+  font-size: 52px;
+}
+
+#maintenanceText{
+  font-size: 52px;
+}
+
+#performance: left(1000);
+#maintenance: right(1000);
+#performanceText: move(-300,500);
+#maintenanceText: move(300,500);
+#tipTypes: up(600);
+
+.s9 {
+
+  #children: down(800);
+  #adults: down(800);
+  #adultsText: down(800);
+
+  #children: hide;
+  #adults: hide;
+  #adultsText: hide;
+
+  #performance: right(700);
+  #maintenance: left(700);
+  #performanceText: up(200);
+  #maintenanceText: up(200);
+  #tipTypes: down(230);
+
+  #performance: show;
+  #maintenance: show;
+  #performanceText: show;
+  #maintenanceText: show;
+  #tipTypes: show;
+}
+
+.s10 {
+
+  #performance{
+    transform: scale(1.2, 1.2) translateX(-250px);
+  }
+
+  #performanceText{
+    transform: scale(1.2, 1.2) translateX(-250px) translateY(300px);
+  }
+}
+
+.s11 {
+
+  #performance{
+    transform: scale(1, 1) translateX(-300px);
+  }
+
+  #performanceText{
+    transform: scale(1, 1) translateX(-300px) translateY(300px);
+  }
+
+  #maintenance{
+    transform: scale(1.2, 1.2) translateX(250px);
+  }
+
+  #maintenanceText{
+    transform: scale(1.2, 1.2) translateX(250px) translateY(300px);
+  }
+}
+
+.s12 {
+
+  #maintenance{
+    transform: scale(1, 1) translateX(300px);
+  }
+
+  #maintenanceText{
+    transform: scale(1, 1) translateX(300px) translateY(300px);
+  }
+}
+
+#bestPractice{
+  transform: scale(0, 0);
+}
+
+.s13 {
+  #performance: down(700);
+  #maintenance: down(700);
+  #performanceText: down(800);
+  #maintenanceText: down(800);
+  #tipTypes: down(800);
+
+  #performance: hide;
+  #maintenance: hide;
+  #performanceText: hide;
+  #maintenanceText: hide;
+  #tipTypes: hide;
+
+  #bestPractice: show;
+  #bestPractice{
+    transform: scale(2, 2);
+  }
+
+}
+
+.prettyprint { font-size: 20px; padding: 20px;box-shadow: 0 0 20px #222;}
+
+.tip-title{
+  font-size: 60px;
+}
+
+#anonymousFuncBad .prettyprint{
+  height: 150px;
+}
+
+#anonymousFuncGood .prettyprint{
+  height: 150px;
+}
+
+#anonymous img{
+  height:480px;
+}
+
+#tip1: up(500);
+#anonymous:down(500);
+
+.s14 {
+  #bestPractice: hide;
+  #bestPractice{
+    transform: scale(0, 0);
+  }
+
+  #tip1: down(200);
+  #anonymous: up(500);
+
+  #tip1: show;
+  #anonymous:show;
+}
+
+#anonymousFuncBad{
+  transform: scale(0, 0);
+}
+
+.s15 {
+  #anonymous{
+    transform: scale(0, 0);
+  }
+
+  #anonymousFuncBad{
+    transform: scale(1, 1);
+  }
+
+  #anonymous: hide;
+  #anonymousFuncBad:show;
+}
+
+#bad,#good{
+  z-index: 10;
+  img{
+    width: 40px;
+  }
+}
+
+#bad: up(100);
+#good: up(100);
+
+.s16 {
+
+  #bad:show;
+  #good:show;
+
+  #bad: left(48);
+  #good: right(660);
+  #anonymousFuncBad: left(350);
+  #anonymousFuncGood: right(350);
+
+  #anonymousFuncGood:show;
+}
+
+#tip2: down(700);
+#anonymous2: down(700);
+
+.s17 {
+  #anonymousFuncBad, #bad{
+    transform: rotate(-90deg) translateY(-700px);
+  }
+  #anonymousFuncBad: hide;
+  #bad: hide;
+
+  #anonymousFuncGood, #good {
+    transform: rotate(90deg) translateY(-700px);
+  }
+  #anonymousFuncGood: hide;
+  #good: hide;
+
+  #tip1: up(100) rotate(90) hide;
+  #tip2: up(1000) show;
+  #anonymous2: up(700) show;
 }
