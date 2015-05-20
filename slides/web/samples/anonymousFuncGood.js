@@ -3,4 +3,10 @@ angular.module('todo', [])
 
 function todoListController($scope) {
     //..
+
+	var onTodosChanged = function () {
+		//...
+	};
+
+	$scope.$watch('todos', onTodosChanged, true);
 }

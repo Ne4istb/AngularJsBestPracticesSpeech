@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('todo')
-	.service('todoService', TodoService);
+	.factory('todoService', TodoService);
 
 	function TodoService($http) {
 

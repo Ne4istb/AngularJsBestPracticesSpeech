@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 html, body {
   background: url("../assets/wood_bg.jpg");
@@ -24,10 +25,15 @@ symbol {
   color: #000000;
 }
 
+.snippet{
+  font-style: italic;
+  color: #D85511;
+}
 sample { display:none}
 
 comment {
   background-color: #222;
+  font-family: 'Roboto', sans-serif;
 }
 
 #title{
@@ -341,12 +347,17 @@ comment {
   font-size: 60px;
 }
 
+.tip-desc{
+  font-size: 50px;
+  text-decoration: underline;
+}
+
 #anonymousFuncBad .prettyprint{
-  height: 150px;
+  height: 300px;
 }
 
 #anonymousFuncGood .prettyprint{
-  height: 150px;
+  height: 300px;
 }
 
 #anonymous img{
@@ -367,6 +378,9 @@ comment {
 
   #tip1: show;
   #anonymous:show;
+
+  #maintenance{transform: translateX(600px) translateY(-300px) scale(0.15, 0.15) ;};
+  #maintenance: show;
 }
 
 #anonymousFuncBad{
@@ -393,24 +407,26 @@ comment {
   }
 }
 
-#bad: up(100);
-#good: up(100);
+#bad: up(175);
+#good: up(175);
 
 .s16 {
 
   #bad:show;
   #good:show;
 
-  #bad: left(48);
-  #good: right(660);
+  #bad: left(95);
+  #good: right(635);
   #anonymousFuncBad: left(350);
   #anonymousFuncGood: right(350);
+  #tip1Desc: down(250);
 
   #anonymousFuncGood:show;
+  #tip1Desc:show;
 }
 
 #tip2: down(700);
-#anonymous2: down(700);
+#tip2img: down(700);
 
 .s17 {
   #anonymousFuncBad, #bad{
@@ -426,6 +442,208 @@ comment {
   #good: hide;
 
   #tip1: up(100) rotate(90) hide;
+  #tip1Desc: up(600) rotate(90) hide;
   #tip2: up(1000) show;
-  #anonymous2: up(700) show;
+  #tip2img: up(700) show;
+}
+
+
+#tip2bad .prettyprint{  height: 300px; }
+
+#tip2good .prettyprint{  height: 300px;}
+
+#tip2img img{  height:480px;}
+
+#tip2bad{  transform: scale(0, 0);}
+
+.s18 {
+  #tip2img{    transform: scale(0, 0);  }
+  #tip2bad{    transform: scale(1, 1);  }
+
+  #tip2img: hide;
+  #tip2bad:show;
+}
+
+.s19 {
+
+  #bad:show;
+  #good:show;
+
+  #bad: left(95);
+  #good: right(635);
+
+  #tip2bad: left(350);
+  #tip2good: right(350);
+  #tip2desc: down(250);
+
+  #tip2good:show;
+  #tip2desc:show;
+}
+
+#tip3: down(700);
+#tip3img: down(700);
+
+.s20 {
+  #tip2bad, #bad{    transform: rotate(-90deg) translateY(-700px);  }
+  #tip2bad: hide;
+  #bad: hide;
+
+  #tip2good, #good {    transform: rotate(90deg) translateY(-700px);  }
+  #tip2good: hide;
+  #good: hide;
+
+  #tip2: up(100) rotate(90) hide;
+  #tip2desc: up(600) rotate(90) hide;
+  #tip3: up(1000) show;
+  #tip3img: up(700) show;
+}
+
+#tip3bad .prettyprint{  height: 300px; }
+#tip3good .prettyprint{  height: 300px;}
+#tip3img img{  height:480px;}
+
+
+#tip3bad{  transform: scale(0, 0);}
+
+.s21 {
+  #tip3img{    transform: scale(0, 0);  }
+  #tip3bad{    transform: scale(1, 1);  }
+
+  #tip3img: hide;
+  #tip3bad:show;
+}
+
+.s22 {
+
+  #bad:show;
+  #good:show;
+
+  #bad: left(95);
+  #good: right(635);
+
+  #tip3bad: left(350);
+  #tip3good: right(350);
+  #tip3desc: down(250);
+
+  #tip3good:show;
+  #tip3desc:show;
+}
+
+#tip4: down(700);
+#tip4img: down(700);
+
+.s23 {
+  #tip3bad, #bad{  transform: rotate(-90deg) translateY(-700px);  }
+  #tip3bad: hide;
+  #bad: hide;
+
+  #tip3good, #good {  transform: rotate(90deg) translateY(-700px);  }
+  #tip3good: hide;
+  #good: hide;
+
+  #tip3: up(100) rotate(90) hide;
+  #tip3desc: up(600) rotate(90) hide;
+  #tip4: up(1000) show;
+  #tip4img: up(700) show;
+
+}
+
+#tip4bad .prettyprint, #tip4good .prettyprint{  height: 600px; }
+#tip4img img{  height:480px;}
+#tip4bad{  transform: scale(0, 0);}
+
+#tip4bad: down(60);
+#tip4good: down(60);
+
+.s24 {
+  #tip4img{    transform: scale(0, 0);  }
+  #tip4bad{    transform: translateY(60px) scale(1, 1) ;  }
+
+  #tip4img: hide;
+  #tip4bad:show;
+}
+
+.s25 {
+
+  #bad:show;
+  #good:show;
+
+  #bad: left(95);
+  #good: right(635);
+
+  #tip4bad: left(350);
+  #tip4good: right(350);
+  #tip4desc: down(400);
+
+  #tip4good:show;
+  #tip4desc:show;
+}
+
+#tip5: down(700);
+#tip5img: down(700);
+
+.s26 {
+  #tip4bad, #bad{  transform: rotate(-90deg) translateY(-700px);  }
+  #tip4bad: hide;
+  #bad: hide;
+
+  #tip4good, #good {  transform: rotate(90deg) translateY(-700px);  }
+  #tip4good: hide;
+  #good: hide;
+
+  #tip4: up(100) rotate(90) hide;
+  #tip4desc: up(600) rotate(90) hide;
+  #tip5: up(1000) show;
+  #tip5img: up(700) show;
+
+  #performance{transform: translateX(520px) translateY(-300px) scale(0.15, 0.15) ;};
+  #performance: show;
+}
+
+
+#tip5bad .prettyprint, #tip5good .prettyprint{  height: 450px; }
+#tip5img img{  height:480px;}
+
+#tip5bad{  transform: scale(0, 0);}
+
+.s27 {
+  #tip5img{    transform: scale(0, 0);  }
+  #tip5bad{    transform: scale(1, 1);  }
+
+  #tip5img: hide;
+  #tip5bad:show;
+}
+
+.s28 {
+
+  #bad:show;
+  #good:show;
+
+  #bad: left(95);
+  #good: right(635);
+
+  #tip5bad: left(350);
+  #tip5good: right(350);
+  #tip5desc: down(300);
+
+  #tip5good:show;
+  #tip5desc:show;
+}
+
+#tip6: down(700);
+#tip6img: down(700);
+
+.s29 {
+  #tip5bad, #bad{  transform: rotate(-90deg) translateY(-700px);  }
+  #tip5bad: hide;
+  #bad: hide;
+
+  #tip5good, #good {  transform: rotate(90deg) translateY(-700px);  }
+  #tip5good: hide;
+  #good: hide;
+
+  #tip5: up(100) rotate(90) hide;
+  #tip5desc: up(600) rotate(90) hide;
+  #tip6: up(1000) show;
+  #tip6img: up(700) show;
 }
