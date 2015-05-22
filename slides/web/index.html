@@ -87,6 +87,69 @@
     <symbol id="tip5desc" class="tip-desc">Use <span class="snippet">resolve</span> to prepare data for your controller</symbol>
     <comment slide="28">Data will be loaded before controller initialization, so you [...TODO]</comment>
 
+    <symbol id="tip6" class="tip-title">Tip 6. DOM manipulations</symbol>
+    <symbol id="tip6img"><img src="assets/tip6img.jpg"></symbol>
+    <symbol id="tip6bad" sample="samples/tip6bad.js"></symbol>
+    <symbol id="tip6good" sample="samples/tip6good.js"></symbol>
+    <symbol id="tip6desc" class="tip-desc">Move all <span class="snippet">DOM manipulation</span> from controller to directives</symbol>
+    <comment slide="31">
+        Controller is needed for linking business logic and view so that there should not be any DOM manipulation logic.<br>
+        Try to use templates, CSS, animations to avoid DOM manipulations because they are difficult to test and support
+    </comment>
+
+    <symbol id="tip7" class="tip-title">Tip 7. View data bindings</symbol>
+    <symbol id="tip7img"><img src="assets/tip7img.jpg"></symbol>
+    <symbol id="tip7bad" sample="samples/tip7bad.js"></symbol>
+    <symbol id="tip7good" sample="samples/tip7good.js"></symbol>
+    <symbol id="tip7desc" class="tip-desc">Use pre-calculated variables instead of expressions unless you cannot</symbol>
+    <comment slide="34">Each binding creates watcher which will be recalculated during each digest loop</comment>
+
+    <symbol id="tip8" class="tip-title">Tip 8. View data bindings</symbol>
+    <symbol id="tip8img"><img src="assets/tip8img.png"></symbol>
+    <symbol id="tip8bad" sample="samples/tip8bad.js"></symbol>
+    <symbol id="tip8good" sample="samples/tip8good.js"></symbol>
+    <symbol id="tip8desc" class="tip-desc">Use <span class="snippet">one-time binding</span> for variables which will not be changed</symbol>
+    <comment slide="37">One-time binding will remove watcher after loading data.</comment>
+
+    <symbol id="tip9" class="tip-title">Tip 9. Ng-Model</symbol>
+    <symbol id="tip9img"><img src="assets/tip9img.png"></symbol>
+    <symbol id="tip9bad" sample="samples/tip9bad.js"></symbol>
+    <symbol id="tip9good" sample="samples/tip9good.js"></symbol>
+    <symbol id="tip9desc" class="tip-desc">Use <span class="snippet">ngModelOptions</span> when you work with ng-model</symbol>
+    <comment slide="40">
+        NgModelOptions will help you to avoid writing redundant code and improve performance.<br>
+        Ther are next options: <i>updateOn, debounce, allowInvalid, getterSetter, timezone</i>
+    </comment>
+
+    <symbol id="tip10" class="tip-title">Tip 10. jQuery</symbol>
+    <symbol id="tip10img"><img src="assets/tip10img.jpg"></symbol>
+    <symbol id="tip10bad" sample="samples/tip10bad.js"></symbol>
+    <symbol id="tip10good" sample="samples/tip10good.js"></symbol>
+    <symbol id="tip10desc" class="tip-desc">Use <span class="snippet">jQuery</span> as less as possible</symbol>
+    <comment slide="43">
+        Most of jQuery operations could be replaced by native AngularJS functionality.<br>
+        It will produce more effective and clean code.
+    </comment>
+
+    <symbol id="tip11" class="tip-title">Tip 11. Communication </symbol>
+    <symbol id="tip11img"><img src="assets/tip11img.jpg"></symbol>
+    <symbol id="tip11bad" sample="samples/tip11bad.js"></symbol>
+    <symbol id="tip11good" sample="samples/tip11good.js"></symbol>
+    <symbol id="tip11desc" class="tip-desc">Do not use <span class="snippet">$parent, $$childHead</span> and similar for communication. Use <span class="snippet">events</span> instead.</symbol>
+    <comment slide="46">
+        Using $parent and similar add chaos in your code, make it unsupportable and create hidden bugs.<br>
+        Scope elements which starts with '$$' are Angular service operators so do not use them.
+    </comment>
+
+    <symbol id="tip12" class="tip-title">Tip 12. Events </symbol>
+    <symbol id="tip12img"><img src="assets/tip12img.jpg"></symbol>
+    <symbol id="tip12bad" sample="samples/tip12bad.js"></symbol>
+    <symbol id="tip12good" sample="samples/tip12good.js"></symbol>
+    <symbol id="tip12desc" class="tip-desc">Do not use <span class="snippet">$parent, $$childHead</span> and similar for communication. Use <span class="snippet">events</span> instead.</symbol>
+    <comment slide="49">
+        Using $parent and similar add chaos in your code, make it unsupportable and create hidden bugs.<br>
+        Scope elements which starts with '$$' are Angular service operators so do not use them.
+    </comment>
 </presentation>
 
 <script type="application/dart" src="main.dart"></script>

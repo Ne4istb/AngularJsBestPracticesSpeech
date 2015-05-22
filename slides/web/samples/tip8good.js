@@ -1,0 +1,13 @@
+// todo-list.html
+//...
+<h2 class="header">
+   TODO LIST BY {{::vm.userName}}
+</h2>
+//...
+
+// todo-list-controller.js
+function todoListController(currentUser) {
+   //...
+   vm.userName = $filter('uppercase')(currentUser.name);
+   //...
+}
