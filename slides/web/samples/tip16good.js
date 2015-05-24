@@ -1,13 +1,12 @@
-function addTask(task) {
-   validateItem(task)
-       .then(prepareData)
-       .then(createItem)
-       .then(onItemCreated)
-       .catch(onCreateItemError);
-}
+function TodoService($http) {
 
-function validateItem(task) {}
-function prepareData(task) {}
-function createItem(itemData) {}
-function onItemCreated(item) {}
-function onCreateItemError(error) {}
+   var baseUrl = "http://localhost:8080/todos/";
+
+   var create = function (item) {
+      return $http.post(baseUrl, item)
+         .then(function (response) {
+            return response.data;
+         });
+   };
+   //...
+}

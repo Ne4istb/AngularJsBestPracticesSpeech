@@ -9,9 +9,11 @@ function todoItem() {
    var link = function (scope, element) {
       //...
       element.find('input').on('change', updateItem);
-      angular
-         .element(element[0].querySelector('.delete-item'))
-         .on('click', deleteItem);
+
+      var deleteButton = element[0]
+          .querySelector('.delete-item');
+      angular.element(deleteButton)
+          .on('click', deleteItem);
    };
    return {
       restrict: 'E',

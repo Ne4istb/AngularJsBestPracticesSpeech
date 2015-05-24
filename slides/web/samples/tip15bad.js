@@ -1,16 +1,15 @@
-// todo-item-directive.js
-function todoItem() {
-   var link = function (scope, element) {
-      //...
-      var onItemRemoved = function () {
+function addTask() {
 
-         var todoList = scope.$parent.$parent.todos;
+   validateItem(vm.newTask, function (task) {
+      prepareData(task, function (itemData) {
+         return createItem(itemData, onItemCreated);
+      });
+   }, onCreateItemError);
 
-         var index = getItemIndex(todoList, id);
-
-         if (index >= 0)
-            controllerScope.todos.splice(index, 1);
-      };
-   };
-   //...
 }
+
+function validateItem(task, success, error) {}
+function prepareData(task, callback) {}
+function createItem(itemData, success) {}
+function onItemCreated(response) {}
+function onCreateItemError(error) {}

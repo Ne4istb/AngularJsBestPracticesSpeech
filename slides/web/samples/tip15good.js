@@ -1,21 +1,13 @@
-// todo-item-directive.js
-function todoItem() {
-   var link = function (scope, element) {
-      //...
-      var onItemRemoved = function () {
-         scope.$emit('todo.itemRemoved', scope.task.id);
-      };
-   };
-   //...
+function addTask(task) {
+   validateItem(task)
+       .then(prepareData)
+       .then(createItem)
+       .then(onItemCreated)
+       .catch(onCreateItemError);
 }
 
-// todo-list-controller.js
-function todoListController($scope, todos) {
-   //...
-   function onItemRemoved(event, id){
-      var index = getItemIndex(id);
-      if (index >= 0)
-         vm.todos.splice(index, 1);
-   }
-   $scope.$on('todo.itemRemoved', onItemRemoved);
-}
+function validateItem(task) {}
+function prepareData(task) {}
+function createItem(itemData) {}
+function onItemCreated(item) {}
+function onCreateItemError(error) {}

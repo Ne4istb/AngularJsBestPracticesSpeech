@@ -1,15 +1,20 @@
-function addTask() {
+function TodoService($q, $http) {
 
-   validateItem(vm.newTask, function (task) {
-      prepareData(task, function (itemData) {
-         return createItem(itemData, onItemCreated);
-      });
-   }, onCreateItemError);
+   var baseUrl = "http://localhost:8080/todos/";
 
+   var create = function (item) {
+
+      var deferred = $q.defer();
+
+      $http.post(baseUrl, item)
+         .then(function (response) {
+            deferred.resolve(response.data);
+         })
+         .catch(function (response){
+            deferred.reject(response.data);
+         });
+
+      return deferred.promise;
+   };
+   //...
 }
-
-function validateItem(task, success, error) {}
-function prepareData(task, callback) {}
-function createItem(itemData, success) {}
-function onItemCreated(response) {}
-function onCreateItemError(error) {}

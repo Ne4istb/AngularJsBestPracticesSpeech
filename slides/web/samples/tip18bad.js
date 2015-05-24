@@ -1,21 +1,19 @@
-//todo-list.html
+// todo-list.html
 //...
-<div ng-repeat="task in todos">
-    <todo-item task="task"></todo-item>
+<div ng-repeat="tag in vm.tags">
+   <div>{{tag}}</div>
+   //...
 </div>
 //...
 
-//todo-list-controller.js
-//...
-vm.todos = reorderTodoList(vm.todos);
-function reorderTodoList(list){
-   var result = [];
-   list.forEach(function(item){
-      if(!item.done) result.push(item);
-   });
-   list.forEach(function(item){
-      if(item.done) result.push(item);
-   });
-   return result;
+// todo-list-controller.js
+function todoListController(todoService) {
+   //...
+   vm.tags = [
+      "First tag",
+      "Second tag",
+      "Another tag",
+      "Last tag"
+   ];
+   //...
 }
-//...

@@ -1,18 +1,19 @@
 // todo-list.html
 //...
-<div>Count: {{vm.getUnfinishedTasksCount()}}</div>
+<div>Count: {{vm.getUnfinishedCount()}}</div>
 //...
 
 // todo-list-controller.js
 function todoListController(todoService) {
    //...
-   vm.unfinishedTasksCount = getUnfinishedTasksCount();
+   vm.getUnfinishedCount = getUnfinishedTasksCount();
 
    function getUnfinishedTasksCount() {
 
-      var unfinished = vm.todos.filter(function (task) {
-         return !task.done;
-      });
+      var unfinished = vm.todos
+         .filter(function (task) {
+            return !task.done;
+         });
 
       return unfinished.length;
    }

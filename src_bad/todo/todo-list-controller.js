@@ -88,7 +88,7 @@ angular.module('todo', [])
 		console.log(error);
 	};
 
-	$scope.getUnfinishedTasksCount = function () {
+	$scope.getUnfinishedCount = function () {
 
 		var unfinished = $scope.todos.filter(function (task) {
 			return !task.done;

@@ -4,9 +4,9 @@ function todoItem() {
       //...
       var onItemRemoved = function () {
 
-         var controllerScope = scope.$parent.$parent;
+         var todoList = scope.$parent.$parent.todos;
 
-         var index = getItemIndex(controllerScope.todos, id);
+         var index = getItemIndex(todoList, id);
 
          if (index >= 0)
             controllerScope.todos.splice(index, 1);

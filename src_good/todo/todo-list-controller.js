@@ -10,7 +10,7 @@ function todoListController($q, $filter, $scope, todos, todoService, currentUser
 	var vm = this;
 
 	vm.todos = todos;
-	vm.unfinishedTasksCount = getUnfinishedTasksCount();
+	vm.unfinishedCount = getUnfinishedTasksCount();
 	vm.userName = $filter('uppercase')(currentUser.name);
 	vm.addTask = addTask;
 	vm.searchTodos = searchTodos;
@@ -51,7 +51,7 @@ function todoListController($q, $filter, $scope, todos, todoService, currentUser
 		vm.todos.unshift(item);
 
 		vm.newTask = undefined;
-		vm.unfinishedTasksCount = getUnfinishedTasksCount();
+		vm.unfinishedCount = getUnfinishedTasksCount();
 	}
 
 	function onCreateItemError(error) {
