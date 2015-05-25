@@ -61,8 +61,8 @@
     <symbol id="tip2good" sample="samples/tip2good.js"></symbol>
 
     <comment slide="19">
-        Use a minification-safe approach []<br>
-        Use $inject to manually identify your dependencies<br>
+        Use a minification-safe approach <span class="snippet_comment">[]</span><br>
+        Use <span class="snippet_comment">$inject</span> to manually identify your dependencies<br>
         Order dependencies from global to specific
     </comment>
 
@@ -71,7 +71,7 @@
     <symbol id="tip3bad" sample="samples/tip3bad.js"></symbol>
     <symbol id="tip3good" sample="samples/tip3good.js"></symbol>
     <symbol id="tip3desc" class="tip-desc">Use a capture variable for <span class="snippet">this</span> when using the <span class="snippet">controllerAs</span> syntax</symbol>
-    <comment slide="22">This syntax helps to keep controller interface in one place and avoid $scopeoverloading. <span class="snippet">vm</span> is abbreviation from ViewModel.</comment>
+    <comment slide="22">This syntax helps to keep controller interface in one place and avoid scope overloading. <span class="snippet">vm</span> is abbreviation from ViewModel.</comment>
 
     <symbol id="tip4" class="tip-title">Tip 4. Controller logic and external calls</symbol>
     <symbol id="tip4img" class="tip-image"><img src="assets/tip4img.jpg"></symbol>
@@ -117,28 +117,22 @@
     <symbol id="tip9good" sample="samples/tip9good.js"></symbol>
     <symbol id="tip9desc" class="tip-desc">Use <span class="snippet">ngModelOptions</span> when you work with ng-model</symbol>
     <comment slide="40">
-        NgModelOptions will help you to avoid writing redundant code and improve performance.<br>
-        Ther are next options: <i>updateOn, debounce, allowInvalid, getterSetter, timezone</i>
+        <span class="snippet_comment">NgModelOptions</span> will help you to avoid writing redundant code and improve performance.<br>
+        Ther are next options: <span class="snippet_comment">updateOn, debounce, allowInvalid, getterSetter, timezone</span>
     </comment>
 
     <symbol id="tip10" class="tip-title">Tip 10. Ng-Show vs Ng-If</symbol>
-    <symbol id="tip10img" class="tip-image"><img src="assets/tip10img.png"></symbol>
-    <symbol id="tip10desc1" class="tip-desc tip-text">Generally<br><ul><li>point 2<br><br></li><li>point4</li></ul></symbol>
-    <symbol id="tip10desc2" class="tip-desc tip-text"><ul><li>point 1<br><br></li><li>point 3<br><br></li></ul></symbol>
+    <symbol id="tip10img" class="tip-image"><img src="assets/tip10img.jpg"></symbol>
+    <symbol id="tip10desc1" class="tip-desc tip-text">You may need <span class="snippet">ng-show</span> for an elements that toggles on an off often, but for 95% of the time, <span class="snippet">ng-if</span> is a better way to go.</symbol>
     <comment slide="42">
-        NgModelOptions will help you to avoid writing redundant code and improve performance.<br>
-        Ther are next options: <i>updateOn, debounce, allowInvalid, getterSetter, timezone</i>
+        <span class="snippet_comment">ng-show</span> will render an element, and use <span class="snippet_comment">display:none</span> to hide it,<br>
+        <span class="snippet_comment">ng-if</span> will actually removes the element from DOM, and will re-create it, if it’s needed.
     </comment>
 
-    <symbol id="tip11" class="tip-title">Tip 11. Lists</symbol>
-    <symbol id="tip11img" class="tip-image" class="tip-image"><img src="assets/tip11img.png"></symbol>
-    <symbol id="tip11desc1" class="tip-desc tip-text">Generally<br><ul><li>point 2<br><br></li><li>point4</li></ul></symbol>
-    <symbol id="tip11desc2" class="tip-desc tip-text"><ul><li>point 1<br><br></li><li>point 3<br><br></li></ul></symbol>
-    <comment slide="44">
-        NgModelOptions will help you to avoid writing redundant code and improve performance.<br>
-        Ther are next options: <i>updateOn, debounce, allowInvalid, getterSetter, timezone</i>
-    </comment>
-
+    <symbol id="tip11" class="tip-title">Tip 11. Ng-repeat</symbol>
+    <symbol id="tip11img" class="tip-image" class="tip-image"><img src="assets/tip11img.jpg"></symbol>
+    <symbol id="tip11desc1" class="tip-desc tip-text">There are 2 point to pay attention:<br><br><ul><li> If you have to use ng-repeat with long lists use infinite scrolling or pagination<br><br></li></ul></symbol>
+    <symbol id="tip11desc2" class="tip-desc tip-text"><br><ul><li>Use track by whenever possible<br><br><br><br></li></ul></symbol>
 
     <symbol id="tip12" class="tip-title">Tip 12. jQuery</symbol>
     <symbol id="tip12img" class="tip-image"><img src="assets/tip12img.jpg"></symbol>
@@ -156,19 +150,16 @@
     <symbol id="tip13good" sample="samples/tip13good.js"></symbol>
     <symbol id="tip13desc" class="tip-desc" style="text-align: center">Do not use <span class="snippet">$parent, $$childHead</span> and similar for communication. <br>Use <span class="snippet">events</span> instead.</symbol>
     <comment slide="50">
-        Using $parent and similar add chaos in your code, make it unsupportable and create hidden bugs.<br>
-        Scope elements which starts with '$$' are Angular service operators so do not use them.
+        Using <span class="snippet_comment">$parent</span> and similar add chaos in your code, make it unsupportable and create hidden bugs.<br>
+        Scope elements which starts with '<span class="snippet_comment">$$</span>' are Angular service operators so do not use them.<br>
+        <span class="snippet_comment">Use events carefully</span> as well, because they are slow and provide private data to public.
     </comment>
 
-    <symbol id="tip14" class="tip-title">Tip 14. Events </symbol>
+    <symbol id="tip14" class="tip-title">Tip 14. Communication between directives </symbol>
     <symbol id="tip14img" class="tip-image"><img src="assets/tip14img.jpg"></symbol>
     <symbol id="tip14bad" sample="samples/tip14bad.js"></symbol>
     <symbol id="tip14good" sample="samples/tip14good.js"></symbol>
-    <symbol id="tip14desc" class="tip-desc">Do not use <span class="snippet">$parent, $$childHead</span> and similar for communication. Use <span class="snippet">events</span> instead.</symbol>
-    <comment slide="53">
-        Using $parent and similar add chaos in your code, make it unsupportable and create hidden bugs.<br>
-        Scope elements which starts with '$$' are Angular service operators so do not use them.
-    </comment>
+    <symbol id="tip14desc" class="tip-desc">Use <span class="snippet">controller</span> when you want to expose an API to other directives. Otherwise use <span class="snippet">link</span>.</symbol>
 
     <symbol id="tip15" class="tip-title">Tip 15. Promises </symbol>
     <symbol id="tip15img" class="tip-image"><img src="assets/tip15img.jpg"></symbol>
@@ -208,6 +199,39 @@
     <symbol id="tip19img" class="tip-image"><img src="assets/tip19img.jpg"></symbol>
     <symbol id="tip19desc1" class="tip-desc tip-text">General recommendations on Angular services<br><br><ul><li>Use factory everywhere instead of mixing service/factory<br><br></li><li>Do not leak information about data sources</li></ul></symbol>
     <symbol id="tip19desc2" class="tip-desc tip-text"><ul><li>Keep services stateless<br><br><br></li><li>Handle errors inside of service<br><br><br></li></ul></symbol>
+
+    <symbol id="tip20" class="tip-title">Tip 20. Clear watches</symbol>
+    <symbol id="tip20img" class="tip-image"><img src="assets/tip20img.jpg"></symbol>
+    <symbol id="tip20bad" sample="samples/tip20bad.js"></symbol>
+    <symbol id="tip20good" sample="samples/tip20good.js"></symbol>
+    <symbol id="tip20desc" class="tip-desc">Do not forget to clean up <span class="snippet">watchers, intervals, timeouts</span> and <span class="snippet">variables</span></symbol>
+    <comment slide="70"><span class="snippet_comment">$watch, $interval, $timeout</span> return deregistration functions so use them if possible</comment>
+
+    <symbol id="tip21" class="tip-title">Tip 21. Other</symbol>
+    <symbol id="tip21img" class="tip-image"><img src="assets/tip21img.jpg"></symbol>
+    <symbol id="tip21desc1" class="tip-desc tip-text">A lot of tips are left:<br><br><ul><li>Compile vs link<br><br></li><li>Understanding of digest loop<br><br></li><li>Decorators<br><br></li></ul></symbol>
+    <symbol id="tip21desc2" class="tip-desc tip-text"><br><ul><li>Constants and values vs $rootscope<br><br></li><li>Broadcast/emit<br><br></li><li>Unit testing<br><br></li><li>and other...</li></ul></symbol>
+
+    <symbol id="remeber">And remember!</symbol>
+    <symbol id="ifDifficult">If something becomes too complicated</symbol>
+    <symbol id="somethingWrong">you do something wrong</symbol>
+    <symbol id="rethink">Stop and think one more time!</symbol>
+
+    <symbol id="links">Some useful links</symbol>
+
+    <symbol id="johnpapa" class="qr"><img src="assets/john-papa.gif"> <a href="https://github.com/johnpapa/angular-styleguide">https://github.com/johnpapa/angular-styleguide</a></symbol>
+    <symbol id="guide" class="qr"><img src="assets/style-guide.gif"> <a href="https://mgechev.github.io/angularjs-style-guide/">https://mgechev.github.io/angularjs-style-guide/</a></symbol>
+
+    <symbol id="questionsText">Questions?</symbol>
+    <symbol id="questions"><img src="assets/questions.jpg"></symbol>
+
+    <symbol id="thanks"><img src="assets/thanks.jpg"></symbol>
+
+    <symbol id="slides" class="qr"><img src="assets/john-papa.gif"> <a href="https://github.com/johnpapa/angular-styleguide">https://slides.ne4istb.com/angular-way</a></symbol>
+    <symbol id="twitter" class="social"><img src="assets/twitter.jpg"> <span>@anechytailov</span></symbol>
+    <symbol id="github" class="social"><img src="assets/github.gif"> <span>Ne4istb</span></symbol>
+    <symbol id="google" class="social"><img src="assets/google.png"> <span>+AndreyNechitailov</span></symbol>
+
 </presentation>
 
 <script type="application/dart" src="main.dart"></script>

@@ -29,6 +29,12 @@ symbol {
   font-style: italic;
   color: #3d43cd;
 }
+
+.snippet_comment{
+  font-style: italic;
+  color: #68D32A;
+}
+
 sample { display:none}
 
 comment {
@@ -947,12 +953,17 @@ comment {
 
   #tip13: up(100) rotate(90) hide;
   #tip13desc: up(600) rotate(90) hide;
-  #tip14: up(1000) show;
+  #tip14: up(1100) show;
+  #maintenance{transform: translateX(700px) translateY(-400px) scale(0.15, 0.15) ;};
+  #performance{transform: translateX(620px) translateY(-400px) scale(0.15, 0.15) ;};
+  #performance: show;
+  #maintenance: show;
+
   #tip14img: up(700) show;
 }
 
 
-#tip14bad .prettyprint, #tip14good .prettyprint{  height: 480px; }
+#tip14bad .prettyprint, #tip14good .prettyprint{ font-size: 16px;  height: 580px; }
 #tip14bad{  transform: scale(0, 0);}
 
 .s52 {
@@ -990,10 +1001,14 @@ comment {
   #tip14desc: up(600) rotate(90) hide;
   #tip15: up(1000) show;
   #tip15img: up(700) show;
+
+  #maintenance{transform: translateX(600px) translateY(-300px) scale(0.15, 0.15) ;};
+  #performance{transform: translateX(520px) translateY(-300px) scale(0.15, 0.15) ;};
+  #performance: hide;
 }
 
 
-#tip15bad .prettyprint, #tip15good .prettyprint{  height: 350px; }
+#tip15bad .prettyprint, #tip15good .prettyprint{ height: 350px; }
 #tip15bad{  transform: scale(0, 0);}
 
 .s55 {
@@ -1114,7 +1129,6 @@ comment {
   #tip18img: up(700) show;
 }
 
-
 #tip18bad .prettyprint, #tip18good .prettyprint{  height: 480px; }
 #tip18bad{  transform: scale(0, 0);}
 
@@ -1183,5 +1197,180 @@ comment {
 
   #tip20: up(1000) show;
   #tip20img: up(700) show;
+  #performance: show;
+}
+
+#tip20bad .prettyprint, #tip20good .prettyprint{  height: 480px; }
+#tip20bad{  transform: scale(0, 0);}
+
+.s69 {
+  #tip20img{    transform: scale(0, 0);  }
+  #tip20bad{    transform: scale(1, 1);  }
+
+  #tip20img: hide;
+
+  #tip20bad:show;
+}
+
+.s70 {
+
+  #bad:show left(95);
+  #good:show right(635);
+
+  #tip20bad: left(350);
+  #tip20good: right(350) show;
+  #tip20desc: down(350) show;
+}
+
+#tip21: down(700);
+#tip21img: down(700);
+
+
+
+.s71 {
+  #tip20bad, #bad{  transform: rotate(-90deg) translateY(-700px);  }
+  #tip20bad: hide;
+  #bad: hide;
+
+  #tip20good, #good {  transform: rotate(90deg) translateY(-700px);  }
+  #tip20good: hide;
+  #good: hide;
+
+  #tip20: up(100) rotate(90) hide;
+  #tip20desc: up(600) rotate(90) hide;
+  #tip21: up(1000) show;
+  #tip21img: up(700) show;
+}
+
+#tip21desc1: down(50) left(1000);
+#tip21desc2: down(50) right(1000);
+
+
+.s72 {
+
+  .tip-text{
+    width: 900px;
+  }
+
+  #tip21img{    transform: scale(0, 0);  }
+
+  #tip21img: hide;
+  #tip21desc1: right(1000) show;
+  #tip21desc2: left(1000) show;
+}
+
+#remeber{    transform: scale(20, 20);  }
+
+.s73 {
+  #tip21: up(100) rotate(90) hide;
+
+  #tip21desc1: left(1000) hide;
+  #tip21desc2: right(1000) hide;
+
   #performance: hide;
+  #maintenance: hide;
+  #remeber{    transform: scale(1, 1);  }
+  #remeber:show;
+}
+
+
+#ifDifficult, #somethingWrong, #rethink{
+  font-size: 60px;
+  transform: scale(20, 20);
+}
+
+.s74 {
+  #remeber:up(300);
+
+  #ifDifficult{ transform: translateX(-300px) translateY(-100px) scale(1, 1);  }
+  #ifDifficult:show;
+}
+
+
+
+.s75 {
+  #somethingWrong{ transform: translateX(300px) scale(1, 1);  }
+  #somethingWrong:show;
+}
+
+.s76 {
+  #rethink{ transform: translateY(200px) scale(1, 1);  }
+  #rethink:show;
+}
+
+.qr{
+  img{
+    width: 200px;
+  }
+  a{
+    font-size: 60px;
+    vertical-align: bottom;
+    line-height: 200px;
+  }
+}
+
+
+#links: up(350);
+#johnpapa: up(100);
+#guide: down(200);
+
+.s77 {
+  #rethink, #ifDifficult, #somethingWrong, #remeber { transform: translateY(800px) rotateZ(180deg) }
+  #rethink, #ifDifficult, #somethingWrong, #remeber: hide;
+
+  #links, #johnpapa, #guide:show;
+}
+
+#questionsText: up(350);
+
+.s78 {
+  #links, #johnpapa, #guide:hide;
+  #questions, #questionsText:show;
+}
+
+#thanks img{
+  width: 500px;
+}
+
+.s79 {
+  #questions, #questionsText:hide;
+  #thanks:show;
+}
+
+.s80 {
+  #questions, #questionsText:hide;
+  #thanks:show;
+}
+
+#slides: down(300);
+
+.social{
+  img{
+    height:48px;
+  }
+
+  width:520px;
+  span{
+    font-size: 48px;
+    line-height: 48px;
+    vertical-align: middle;
+  }
+}
+
+#twitter: move(120,-150);
+#github: move(120,-90);
+#google: move(120,-30);
+
+.s81 {
+
+  #thanks:move(-400,-190) show;
+  #name: move(100,-400) show;
+  #mytitle: move(100,-350) show;
+  #logo: move(500,-350) show;
+
+  #twitter: show;
+  #twitter: show;
+  #github: show;
+  #google: show;
+  #slides: show;
 }
