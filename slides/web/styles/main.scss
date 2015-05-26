@@ -355,7 +355,6 @@ comment {
 
 .tip-desc{
   font-size: 50px;
-  text-decoration: underline;
 }
 
 #anonymousFuncBad .prettyprint{
@@ -413,16 +412,13 @@ comment {
   }
 }
 
-#bad: up(175);
-#good: up(175);
-
 .s16 {
 
   #bad:show;
   #good:show;
 
-  #bad: left(95);
-  #good: right(635);
+  #bad{transform: translateX(-73px) translateY(-175px)};
+  #good{transform: translateX(665px) translateY(-175px)};
   #anonymousFuncBad: left(350);
   #anonymousFuncGood: right(350);
   #tip1Desc: down(250);
@@ -471,8 +467,8 @@ comment {
   #bad:show;
   #good:show;
 
-  #bad: left(95);
-  #good: right(635);
+  #bad{transform: translateX(-40px) translateY(-175px)};
+  #good{transform: translateX(683px) translateY(-175px)};
 
   #tip2bad: left(350);
   #tip2good: right(350);
@@ -514,8 +510,10 @@ comment {
 
 .s22 {
 
-  #bad:show left(95);
-  #good:show left(2000);
+  #bad:show;
+  #good:show;
+  #bad{transform: translateX(-85px) translateY(-275px)};
+  #good{transform: translateX(720px) translateY(-275px)};
 
   #tip3bad: left(350);
   #tip3good: right(350);
@@ -562,9 +560,8 @@ comment {
 
   #bad:show;
   #good:show;
-
-  #bad: left(95);
-  #good: right(635);
+  #bad{transform: translateX(-67px) translateY(-265px)};
+  #good{transform: translateX(635px) translateY(-265px)};
 
   #tip4bad: left(350);
   #tip4good: right(350);
@@ -612,9 +609,8 @@ comment {
 
   #bad:show;
   #good:show;
-
-  #bad: left(95);
-  #good: right(635);
+  #bad{transform: translateX(-78px) translateY(-250px)};
+  #good{transform: translateX(575px) translateY(-250px)};
 
   #tip5bad: left(350);
   #tip5good: right(350);
@@ -658,9 +654,8 @@ comment {
 
   #bad:show;
   #good:show;
-
-  #bad: left(95);
-  #good: right(635);
+  #bad{transform: translateX(-35px) translateY(-250px)};
+  #good{transform: translateX(628px) translateY(-250px)};
 
   #tip6bad: left(350);
   #tip6good: right(350);
@@ -705,9 +700,8 @@ comment {
 
   #bad:show;
   #good:show;
-
-  #bad: left(95);
-  #good: right(635);
+  #bad{transform: translateX(-35px) translateY(-250px)};
+  #good{transform: translateX(647px) translateY(-250px)};
 
   #tip7bad: left(350);
   #tip7good: right(350);
@@ -751,9 +745,8 @@ comment {
 
   #bad:show;
   #good:show;
-
-  #bad: left(95);
-  #good: right(635);
+  #bad{transform: translateX(-95px) translateY(-175px)};
+  #good{transform: translateX(685px) translateY(-175px)};
 
   #tip8bad: left(350);
   #tip8good: right(350);
@@ -796,8 +789,10 @@ comment {
 
 .s40 {
 
-  #bad:show left(95);
-  #good:show right(635);
+  #bad:show;
+  #good:show;
+  #bad{transform: translateX(-120px) translateY(-150px)};
+  #good{transform: translateX(725px) translateY(-150px)};
 
   #tip9bad: left(350);
   #tip9good: right(350) show;
@@ -872,7 +867,7 @@ comment {
   #tip11desc1: left(1000) hide;
   #tip11desc2: right(1000) hide;
 
-  #tip12: up(1000) show;
+  #tip12: up(1030) show;
   #tip12img: up(700) show;
   #performance: hide;
 }
@@ -891,8 +886,10 @@ comment {
 
 .s47 {
 
-  #bad:show left(95);
-  #good:show right(635);
+  #bad:show;
+  #good:show;
+  #bad{transform: translateX(-38px) translateY(-275px)};
+  #good{transform: translateX(675px) translateY(-275px)};
 
   #tip12bad: left(350);
   #tip12good: right(350) show;
@@ -930,9 +927,10 @@ comment {
 }
 
 .s50 {
-
-  #bad:show left(95);
-  #good:show right(635);
+  #bad:show;
+  #good:show;
+  #bad{transform: translateX(-42px) translateY(-265px)};
+  #good{transform: translateX(683px) translateY(-265px)};
 
   #tip13bad: left(350);
   #tip13good: right(350) show;
@@ -975,10 +973,16 @@ comment {
   #tip14bad:show;
 }
 
+#tip14desc: down(30);
+#tip14desc{
+  text-align: center;
+}
 .s53 {
 
-  #bad:show left(95);
-  #good:show right(635);
+  #bad:show;
+  #good:show;
+  #bad{transform: translateX(-95px) translateY(-315px)};
+  #good{transform: translateX(635px) translateY(-315px)};
 
   #tip14bad: left(350);
   #tip14good: right(350) show;
@@ -1022,8 +1026,10 @@ comment {
 
 .s56 {
 
-  #bad:show left(95);
-  #good:show right(635);
+  #bad:show;
+  #good:show;
+  #bad{transform: translateX(-42px) translateY(-200px)};
+  #good{transform: translateX(565px) translateY(-200px)};
 
   #tip15bad: left(350);
   #tip15good: right(350) show;
@@ -1063,9 +1069,10 @@ comment {
 
 .s59 {
 
-  #bad:show left(95);
-  #good:show right(635);
-
+  #bad:show;
+  #good:show;
+  #bad{transform: translateX(-65px) translateY(-265px)};
+  #good{transform: translateX(635px) translateY(-265px)};
   #tip16bad: left(350);
   #tip16good: right(350) show;
   #tip16desc: down(350) show;
@@ -1103,9 +1110,10 @@ comment {
 
 .s62 {
 
-  #bad:show left(95);
-  #good:show right(635);
-
+  #bad:show;
+  #good:show;
+  #bad{transform: translateX(-120px) translateY(-265px)};
+  #good{transform: translateX(660px) translateY(-265px)};
   #tip17bad: left(350);
   #tip17good: right(350) show;
   #tip17desc: down(350) show;
@@ -1143,8 +1151,10 @@ comment {
 
 .s65 {
 
-  #bad:show left(95);
-  #good:show right(635);
+  #bad:show;
+  #good:show;
+  #bad{transform: translateX(-100px) translateY(-265px)};
+  #good{transform: translateX(600px) translateY(-265px)};
 
   #tip18bad: left(350);
   #tip18good: right(350) show;
@@ -1169,8 +1179,8 @@ comment {
   #tip19img: up(700) show;
 }
 
-#tip19desc1: down(50) left(1000);
-#tip19desc2: down(50) right(1000);
+#tip19desc1: down(120) left(1000);
+#tip19desc2: down(120) right(1000);
 
 
 .s67 {
@@ -1214,8 +1224,10 @@ comment {
 
 .s70 {
 
-  #bad:show left(95);
-  #good:show right(635);
+  #bad:show;
+  #good:show;
+  #bad{transform: translateX(-52px) translateY(-265px)};
+  #good{transform: translateX(688px) translateY(-265px)};
 
   #tip20bad: left(350);
   #tip20good: right(350) show;
@@ -1242,8 +1254,8 @@ comment {
   #tip21img: up(700) show;
 }
 
-#tip21desc1: down(50) left(1000);
-#tip21desc2: down(50) right(1000);
+#tip21desc1: down(120) left(1000);
+#tip21desc2: down(120) right(1000);
 
 
 .s72 {
@@ -1255,8 +1267,8 @@ comment {
   #tip21img{    transform: scale(0, 0);  }
 
   #tip21img: hide;
-  #tip21desc1: right(1000) show;
-  #tip21desc2: left(1000) show;
+  #tip21desc1: right(1200) show;
+  #tip21desc2: left(800) show;
 }
 
 #remeber{    transform: scale(20, 20);  }
