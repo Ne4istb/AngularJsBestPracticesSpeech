@@ -88,6 +88,8 @@ comment {
   #mytitle: show;
   #title: show;
   #titleExtra: show;
+  #learningCurve: down(700) rotate(90) hide;
+
 }
 
 .img-background{
@@ -122,13 +124,14 @@ comment {
   #title: hide;
   #titleExtra: hide;
 
-  #learningCurve: show;
+  #learningCurve: up(700) rotate(-90) show;
   #learningCurveText: show;
 }
 
 .s3{
   #learningCurve: hide;
   #learningCurveText: hide;
+  #learningCurve: down(700) rotate(90) hide;
 
   #twinfield: show;
 }
@@ -169,6 +172,11 @@ comment {
   #angular: show;
   #rake: show;
   #rakeText: show;
+
+  #rakedance {
+    transform: rotateY(270deg);
+  }
+  #rakedance:hide;
 }
 
 #rakedance{
@@ -194,7 +202,12 @@ comment {
      transform: rotateY(180deg);
     }
 
-    #rakedance: show;
+   #rakedance {
+     transform: rotateY(360deg);
+   }
+
+   #rakedance: show;
+
     #rakeDanceText: show;
 
     #angular {
@@ -815,7 +828,7 @@ comment {
   #tip9desc: up(600) rotate(90) hide;
   #tip10: up(1000) show;
   #tip10img: up(700) show;
-  #maintenance: show;
+  #maintenance: hide;
 }
 
 .tip-text{
@@ -845,6 +858,7 @@ comment {
   #tip11: up(1000) show;
   #tip11img: up(700) show;
   #performance: hide;
+  #maintenance: show;
 }
 
 #tip11desc1: left(1000);
@@ -869,7 +883,11 @@ comment {
 
   #tip12: up(1030) show;
   #tip12img: up(700) show;
-  #performance: hide;
+
+  #maintenance{transform: translateX(600px) translateY(-330px) scale(0.15, 0.15) ;};
+  #performance{transform: translateX(520px) translateY(-330px) scale(0.15, 0.15) ;};
+
+  #performance: show;
 }
 
 #tip12bad .prettyprint, #tip12good .prettyprint{  height: 500px; }
@@ -912,6 +930,9 @@ comment {
   #tip12desc: up(600) rotate(90) hide;
   #tip13: up(1000) show;
   #tip13img: up(700) show;
+  #performance: hide;
+  #maintenance{transform: translateX(600px) translateY(-300px) scale(0.15, 0.15) ;};
+  #performance{transform: translateX(520px) translateY(-300px) scale(0.15, 0.15) ;};
 }
 
 #tip13bad .prettyprint, #tip13good .prettyprint{  height: 480px; }
@@ -1094,6 +1115,7 @@ comment {
   #tip16desc: up(600) rotate(90) hide;
   #tip17: up(1000) show;
   #tip17img: up(700) show;
+  #performance: show;
 }
 
 #tip17bad .prettyprint, #tip17good .prettyprint{  height: 480px; }
@@ -1135,6 +1157,7 @@ comment {
   #tip17desc: up(600) rotate(90) hide;
   #tip18: up(1000) show;
   #tip18img: up(700) show;
+  #performance: hide;
 }
 
 #tip18bad .prettyprint, #tip18good .prettyprint{  height: 480px; }
@@ -1208,6 +1231,7 @@ comment {
   #tip20: up(1000) show;
   #tip20img: up(700) show;
   #performance: show;
+  #maintenance: show;
 }
 
 #tip20bad .prettyprint, #tip20good .prettyprint{  height: 480px; }
@@ -1308,6 +1332,10 @@ comment {
 .s76 {
   #rethink{ transform: translateY(200px) scale(1, 1);  }
   #rethink:show;
+
+  #links: up(350) rotate(90) hide;
+  #johnpapa: up(100) rotate(90) hide;
+  #guide: down(200) rotate(90) hide;
 }
 
 .qr{
@@ -1315,46 +1343,57 @@ comment {
     width: 200px;
   }
   a{
-    font-size: 60px;
+    font-size: 48px;
     vertical-align: bottom;
     line-height: 200px;
   }
 }
 
-
-#links: up(350);
-#johnpapa: up(100);
-#guide: down(200);
-
 .s77 {
   #rethink, #ifDifficult, #somethingWrong, #remeber { transform: translateY(800px) rotateZ(180deg) }
   #rethink, #ifDifficult, #somethingWrong, #remeber: hide;
 
-  #links, #johnpapa, #guide:show;
+  #links: rotate(-90) show;
+  #johnpapa: rotate(-90) show;
+  #guide: rotate(-90) show;
 }
 
-#questionsText: up(350);
+#questionsText: up(850);
+#questions: down(1000);
 
 .s78 {
-  #links, #johnpapa, #guide:hide;
-  #questions, #questionsText:show;
+  #links: rotate(-90) hide;
+  #johnpapa: rotate(-90) hide;
+  #guide: rotate(-90) hide;
+
+  #questions: up(1000) show;
+  #questionsText: down(500) show;
 }
 
 #thanks img{
   width: 500px;
 }
 
+#thanks{transform: scale(0,0);}
+
 .s79 {
-  #questions, #questionsText:hide;
-  #thanks:show;
-}
 
-.s80 {
-  #questions, #questionsText:hide;
-  #thanks:show;
-}
+  .qr{
+    width:1300px;
+    a{
+      font-size: 40px;
+    }
+  }
 
-#slides: down(300);
+  #questions: down(1000) hide;
+  #questionsText: up(1000) hide;
+
+  #thanks{transform: scale(2,2);}
+  #thanks:show;
+
+  #repo: down(180) rotate(90) hide;
+  #slides: down(400) rotate(90) hide;
+}
 
 .social{
   img{
@@ -1369,11 +1408,14 @@ comment {
   }
 }
 
-#twitter: move(120,-150);
-#github: move(120,-90);
-#google: move(120,-30);
+#twitter: move(130,-150);
+#github: move(130,-90);
+#google: move(130,-30);
 
-.s81 {
+.s80 {
+
+  #repo: rotate(-90) show;
+  #slides: rotate(-90) show;
 
   #thanks:move(-400,-190) show;
   #name: move(100,-400) show;
@@ -1384,5 +1426,4 @@ comment {
   #twitter: show;
   #github: show;
   #google: show;
-  #slides: show;
 }
