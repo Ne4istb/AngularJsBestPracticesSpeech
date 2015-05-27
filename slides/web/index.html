@@ -78,14 +78,14 @@
     <symbol id="tip4bad" sample="samples/tip4bad.js"></symbol>
     <symbol id="tip4good" sample="samples/tip4good.js"></symbol>
     <symbol id="tip4desc" class="tip-desc">Move reusable logic and externals calls to services</symbol>
-    <comment slide="25">Leave in controllers only logic related to view. Keep controller as clean as possible.</comment>
+    <comment slide="25">Leave in controllers only logic related to the view. Keep the controller as clean as possible.</comment>
 
     <symbol id="tip5" class="tip-title">Tip 5. Route resolve</symbol>
     <symbol id="tip5img" class="tip-image"><img src="assets/tip5img.jpg"></symbol>
     <symbol id="tip5bad" sample="samples/tip5bad.js"></symbol>
     <symbol id="tip5good" sample="samples/tip5good.js"></symbol>
     <symbol id="tip5desc" class="tip-desc">Use <span class="snippet">resolve</span> to prepare data for your controller</symbol>
-    <comment slide="28">Data will be loaded before controller initialization, so you [...TODO]</comment>
+    <comment slide="28">Data will be loaded before controller initialization, so you will be able to work with it immediately</comment>
 
     <symbol id="tip6" class="tip-title">Tip 6. DOM manipulations</symbol>
     <symbol id="tip6img" class="tip-image"><img src="assets/tip6img.jpg"></symbol>
@@ -102,7 +102,7 @@
     <symbol id="tip7bad" sample="samples/tip7bad.js"></symbol>
     <symbol id="tip7good" sample="samples/tip7good.js"></symbol>
     <symbol id="tip7desc" class="tip-desc">Use pre-calculated variables instead of expressions unless you cannot</symbol>
-    <comment slide="34">Each binding creates watcher which will be recalculated during each digest loop</comment>
+    <comment slide="34">Each binding creates a watcher which will be recalculated during each digest loop</comment>
 
     <symbol id="tip8" class="tip-title">Tip 8. View data bindings</symbol>
     <symbol id="tip8img" class="tip-image"><img src="assets/tip8img.png"></symbol>
@@ -118,20 +118,20 @@
     <symbol id="tip9desc" class="tip-desc">Use <span class="snippet">ngModelOptions</span> when you work with ng-model</symbol>
     <comment slide="40">
         <span class="snippet_comment">NgModelOptions</span> will help you to avoid writing redundant code and improve performance.<br>
-        Ther are next options: <span class="snippet_comment">updateOn, debounce, allowInvalid, getterSetter, timezone</span>
+        There are next options: <span class="snippet_comment">updateOn, debounce, allowInvalid, getterSetter, timezone</span>
     </comment>
 
     <symbol id="tip10" class="tip-title">Tip 10. Ng-Show vs Ng-If</symbol>
     <symbol id="tip10img" class="tip-image"><img src="assets/tip10img.jpg"></symbol>
-    <symbol id="tip10desc1" class="tip-desc tip-text">You may need <span class="snippet">ng-show</span> for an elements that toggles on an off often, but for 95% of the time, <span class="snippet">ng-if</span> is a better way to go.</symbol>
+    <symbol id="tip10desc1" class="tip-desc tip-text">You may need <span class="snippet">ng-show</span> for an elements that toggles on and off often, but for 95% of the time, <span class="snippet">ng-if</span> is a better way to go.</symbol>
     <comment slide="42">
-        <span class="snippet_comment">ng-show</span> will render an element, and use <span class="snippet_comment">display:none</span> to hide it,<br>
-        <span class="snippet_comment">ng-if</span> will actually removes the element from DOM, and will re-create it, if it’s needed.
+        <span class="snippet_comment">ng-show</span> will render an element, and use <span class="snippet_comment">display: none</span> to hide it,<br>
+        <span class="snippet_comment">ng-if</span> will actually remove the element from DOM, and will re-create it if it’s needed.
     </comment>
 
     <symbol id="tip11" class="tip-title">Tip 11. Ng-repeat</symbol>
     <symbol id="tip11img" class="tip-image" class="tip-image"><img src="assets/tip11img.jpg"></symbol>
-    <symbol id="tip11desc1" class="tip-desc tip-text">There are 2 point to pay attention:<br><br><ul><li> If you have to use ng-repeat with long lists use infinite scrolling or pagination<br><br></li></ul></symbol>
+    <symbol id="tip11desc1" class="tip-desc tip-text">There are 2 points to pay attention:<br><br><ul><li> If you have to use ng-repeat with long lists use infinite scrolling or pagination<br><br></li></ul></symbol>
     <symbol id="tip11desc2" class="tip-desc tip-text"><br><ul><li>Use track by whenever possible<br><br><br><br></li></ul></symbol>
 
     <symbol id="tip12" class="tip-title">Tip 12. jQuery</symbol>
@@ -140,7 +140,7 @@
     <symbol id="tip12good" sample="samples/tip12good.js"></symbol>
     <symbol id="tip12desc" class="tip-desc">Use <span class="snippet">jQuery</span> as less as possible</symbol>
     <comment slide="47">
-        Most of jQuery operations could be replaced by native AngularJS functionality.<br>
+        Most of the jQuery operations could be replaced by native AngularJS functionality.<br>
         It will produce more effective and clean code.
     </comment>
     
@@ -151,8 +151,8 @@
     <symbol id="tip13desc" class="tip-desc" style="text-align: center">Do not use <span class="snippet">$parent, $$childHead</span> and similar for communication. <br>Use <span class="snippet">events</span> instead.</symbol>
     <comment slide="50">
         Using <span class="snippet_comment">$parent</span> and similar add chaos in your code, make it unsupportable and create hidden bugs.<br>
-        Scope elements which starts with '<span class="snippet_comment">$$</span>' are Angular service operators so do not use them.<br>
-        <span class="snippet_comment">Use events carefully</span> as well, because they are slow and provide private data to public.
+        Scope elements which start with '<span class="snippet_comment">$$</span>' are Angular service operators so do not use them.<br>
+        <span class="snippet_comment">Use events carefully</span> as well, because they are slow and provide private data to the public.
     </comment>
 
     <symbol id="tip14" class="tip-title">Tip 14. Communication between directives </symbol>
@@ -167,7 +167,7 @@
     <symbol id="tip15good" sample="samples/tip15good.js"></symbol>
     <symbol id="tip15desc" class="tip-desc">Use <span class="snippet">promise</span> chains instead of functions with callbacks</symbol>
     <comment slide="56">
-        AngularJS has native promises support. <br>Promises help to organize your code in better way.
+        AngularJS has native promises support. <br>Promises help to organize your code in the better way.
     </comment>
 
     <symbol id="tip16" class="tip-title">Tip 16. Promises </symbol>
@@ -183,8 +183,8 @@
     <symbol id="tip17good" sample="samples/tip17good.js"></symbol>
     <symbol id="tip17desc" class="tip-desc">Use angular features instead of "wheels" (for example, order by)</symbol>
     <comment slide="62">
-        Before write some extra code think if this feature is already implemented in the framework.<br>
-        Note: in rare cases native Angular features are non-efficient because of generic nature, but in most cases they are.
+        Before write, some extra code thinks if this feature is already implemented in the framework.<br>
+        Note: in rare cases native Angular features are non-efficient because of the generic nature, but in most cases they are.
     </comment>
 
     <symbol id="tip18" class="tip-title">Tip 18. Primitives binding</symbol>
