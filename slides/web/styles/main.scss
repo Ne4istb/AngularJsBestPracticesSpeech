@@ -383,7 +383,7 @@ comment {
 }
 
 #tip1: up(500);
-#anonymous:down(500);
+#anonymous: down(500);
 
 .s14 {
   #bestPractice: hide;
@@ -1318,7 +1318,7 @@ comment {
 .s74 {
   #remeber:up(300);
 
-  #ifDifficult{ transform: translateX(-300px) translateY(-100px) scale(1, 1);  }
+  #ifDifficult{ transform: translateX(-200px) translateY(-100px) scale(1, 1);  }
   #ifDifficult:show;
 }
 
@@ -1376,14 +1376,19 @@ comment {
 
 #thanks{transform: scale(0,0);}
 
-.s79 {
-
-  .qr{
-    width:1300px;
-    a{
-      font-size: 40px;
-    }
+.qr-my{
+  width:1300px;
+  img{
+    width: 200px;
   }
+  a{
+    font-size: 40px;
+    vertical-align: bottom;
+    line-height: 200px;
+  }
+}
+
+.s79 {
 
   #questions: down(1000) hide;
   #questionsText: up(1000) hide;

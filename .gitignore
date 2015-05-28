@@ -4,3 +4,4 @@ packages
 .pub
 
 /slides/pubspec.lock
+slides/build
