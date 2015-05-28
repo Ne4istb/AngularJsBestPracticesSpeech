@@ -10,7 +10,6 @@ dependencies:
   csslib_transform: '>=0.0.1 <0.1.0'
   pretty_samples: 'any'
   http_server: ">=0.9.5+1 <0.10.0"
-  redstone: ">=0.5.18 <0.6.0"
 transformers:
 - angular
 - dacsslide
