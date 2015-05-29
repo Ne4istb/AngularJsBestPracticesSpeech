@@ -10,7 +10,13 @@ function todoItem(todoService) {
 	var link = function (scope) {
 
 		scope.updateItem = function(){
-			todoService.update(scope.task.id, scope.task);
+			todoService
+				.update(scope.task.id, scope.task)
+				.then(notifyItemUpdated);
+		};
+
+		var notifyItemUpdated = function(){
+				scope.$emit('todo.itemUpdated', scope.task.id);
 		};
 
 		scope.deleteItem = function(){

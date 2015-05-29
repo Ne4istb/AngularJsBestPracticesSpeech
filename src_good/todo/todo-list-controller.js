@@ -51,6 +51,10 @@ function todoListController($q, $filter, $scope, todos, todoService, currentUser
 		vm.todos.unshift(item);
 
 		vm.newTask = undefined;
+		updateUnfinishedCount();
+	}
+
+	function updateUnfinishedCount() {
 		vm.unfinishedCount = getUnfinishedTasksCount();
 	}
 
@@ -79,6 +83,8 @@ function todoListController($q, $filter, $scope, todos, todoService, currentUser
 
 		if (index >= 0)
 			vm.todos.splice(index, 1);
+
+		updateUnfinishedCount();
 	}
 
 	function getItemIndex(id) {
@@ -88,5 +94,6 @@ function todoListController($q, $filter, $scope, todos, todoService, currentUser
 	}
 
 	$scope.$on('todo.itemRemoved', onItemRemoved);
+	$scope.$on('todo.itemUpdated', updateUnfinishedCount);
 }
 

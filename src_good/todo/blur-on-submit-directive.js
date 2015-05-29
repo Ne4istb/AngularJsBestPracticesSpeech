@@ -7,10 +7,14 @@ angular.module('todo')
 
 		return function (scope, element) {
 
-			var textFields = element.find('input');
+			var blurInputs = function () {
 
-			element.bind('submit', function() {
-				textFields[0].blur();
-			});
+				var textFields = element.find('input');
+
+				for (var i=0; i < textFields.length; i++)
+					textFields[i].blur();
+         };
+
+         element.bind('submit', blurInputs);
 		};
 	}

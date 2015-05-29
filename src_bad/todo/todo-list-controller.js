@@ -40,8 +40,8 @@ angular.module('todo', [])
 	};
 
 	var blurNewTaskInput = function () {
-		var textFields = $document.find('input');
-		textFields[0].blur();
+		var newTaskInput = angular.element($document[0].querySelector('#new-task'))[0];
+		newTaskInput.blur();
 	};
 
 	var createNewTodoItem = function () {

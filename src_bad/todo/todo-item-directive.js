@@ -23,7 +23,7 @@ function todoItem($http) {
 
 			var controllerScope = scope.$parent.$parent;
 
-			var index = getItemIndex(controllerScope.todos, id);
+			var index = getItemIndex(controllerScope.todos, scope.task.id);
 
 			if (index >= 0)
 				controllerScope.todos.splice(index, 1);
