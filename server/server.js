@@ -63,6 +63,7 @@ app.use(function(error, request, response, next) {
 });
 
 
+app.use('/', express.static('.'));
 app.use('/bad', express.static('src_bad'));
 app.use('/good', express.static('src_good'));
 app.use('/node_modules', express.static('node_modules'));
